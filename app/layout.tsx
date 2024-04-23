@@ -1,25 +1,21 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import ToasterContext from "./context/ToasterContext";
 import AuthContext from "./context/AuthContext";
 import ActiveStatus from "./components/ActiveStatus";
 
-const inter = Inter({ subsets: ["latin"] });
-
-export const metadata: Metadata = {
-  title: "Messanger Clone",
-  description: "MERN Stack Messanger App",
-};
+export const metadata = {
+  title: 'Messenger',
+  description: 'Messenger-MERN-Stack',
+}
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body>
         <AuthContext>
           <ToasterContext />
           <ActiveStatus />
@@ -27,5 +23,5 @@ export default function RootLayout({
         </AuthContext>
       </body>
     </html>
-  );
+  )
 }
